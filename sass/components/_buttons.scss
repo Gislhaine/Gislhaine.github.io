@@ -1,0 +1,23 @@
+/* Configuration globale boutons */
+.bouton {
+	border-radius: $border-radius--bouton;
+	padding: 20px 30px;
+	font-weight: map-get($graisse-texte, bold);
+	border: none;
+	cursor: pointer;
+	@include ombre-bouton;
+	transition: all 400ms ease;
+	/* Configuration des CTA */
+	&__CTA {
+		font-size: map-get($taille-texte, titre-petit);
+		font-family: $typo--titre;
+		&:hover {
+			filter: brightness(106%); /* éclaircissement du bouton au survol */
+		}
+		/* Gestion de la couleur */
+		&--violet {
+			background: $gradient--violet;
+			color: $couleur--blanc;
+		}
+	}
+}

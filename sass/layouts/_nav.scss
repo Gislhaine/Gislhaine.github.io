@@ -1,0 +1,10 @@
+/* footer (commun à toutes les pages) */
+footer {
+	padding: 30px;
+	color: $couleur--blanc;
+	background-color: $couleur--gris-fonce;
+	i {
+		width: 1rem;
+		margin-right: 15px;
+	}
+}

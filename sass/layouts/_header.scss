@@ -1,0 +1,52 @@
+/* Barre du menu avec logo */
+.header {
+	height: 80px;
+	width: 100%;
+	& img {
+		height: 50%;
+	}
+	/* Comportement logo sur page restaurant */
+	&--restaurant a {
+		display: inline-block;
+		margin: auto;
+		position: relative;
+		right: calc(2% + 3px);
+	}
+}
+
+/* Bouton précédent header */
+input[type="button"] {
+	background-color: transparent;
+	border: none;
+	font-family: $typo--icone;
+	font-size: 1.5rem;
+	font-weight: 600;
+	position: relative;
+}
+
+.bouton-precedent {
+	margin-left: 2%;
+	width: 2rem;
+}
+
+/** Header page restaurant **/
+/* Image en bannière */
+.banner {
+	& img {
+		height: 33vh;
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+/* Nom du restaurant */
+.section {
+	&__nom-restaurant {
+		width: 100%;
+		position: relative;
+		border-radius: 50px 50px 0 0;
+		margin-top: -50px;
+		padding: 20px 30px 10px 30px;
+	}
+}

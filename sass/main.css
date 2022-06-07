@@ -1,0 +1,944 @@
+@charset "UTF-8";
+/* Importation 7 1 */
+/* Configuration variables  */
+/** Permet de gérer les mediaqueries avec les variables issues de "Breakpoints" **/
+/** Gestion des ombres des briques. Les deux sont identiques actuellement mais sont implantées selon l'usage attribué. Pourra être modifier ultérieurement **/
+/* Changement couleur #xxx en RGB avec gestion de l'opacité */
+/* Bloc de couleur plus foncé (ex: bloc "nouveau" sur les restaurants page accueil */
+/* Stroke svg de couleur plus foncé (ex: bloc "like" sur les restaurants page accueil */
+/*** Animations ***/
+/* Animation pulsion */
+@-webkit-keyframes animation--pulse {
+  0% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+@keyframes animation--pulse {
+  0% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+/* Animation remplissage */
+@-webkit-keyframes animation--fill {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  15% {
+    -webkit-transform: scale(0.25);
+            transform: scale(0.25);
+    opacity: 0.25;
+  }
+  45% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0.5;
+  }
+  75% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+    opacity: 0.75;
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 1;
+  }
+}
+@keyframes animation--fill {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  15% {
+    -webkit-transform: scale(0.25);
+            transform: scale(0.25);
+    opacity: 0.25;
+  }
+  45% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0.5;
+  }
+  75% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+    opacity: 0.75;
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Animation .validation-choix pour les items des menus */
+@-webkit-keyframes animation-brique-menu--survol {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@keyframes animation-brique-menu--survol {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+/* Animation .validation-choix pour les items des menus */
+@-webkit-keyframes animation-brique-menu__texte {
+  100% {
+    width: calc(70%);
+  }
+}
+@keyframes animation-brique-menu__texte {
+  100% {
+    width: calc(70%);
+  }
+}
+
+@-webkit-keyframes animation-brique-menu__icone {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  50% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes animation-brique-menu__icone {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  50% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/* Apparition des items sur la page restaurant */
+@-webkit-keyframes card-apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes card-apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/* Animation du loader (désactivé pour démonstration) */
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 0;
+  }
+}
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes background {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes background {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+p,
+a {
+  font-family: "Roboto", Verdana, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", Verdana, Arial, sans-serif;
+}
+
+/*** Configuration des classes pour modifier les typographies
+/** Privilégier l'appel aux classes en HTML plutôt que d'ajouter l'attribut sur chaque élément **/
+/* Gestion des tailles */
+.titre__partie {
+  font-size: 1.5rem;
+}
+
+.titre__typo-logo {
+  font-family: "Shrikhand", Verdana, Arial, sans-serif;
+}
+
+.titre__petit {
+  font-size: 0.875rem;
+}
+
+/* Gestion des graisses et de la mise en forme */
+.texte__majuscules {
+  text-transform: uppercase;
+}
+
+.texte__centrer {
+  text-align: center;
+}
+
+.texte__gras {
+  font-weight: 700;
+}
+
+.texte__semi-bold {
+  font-weight: 400;
+}
+
+.texte__light {
+  font-weight: 100;
+}
+
+.texte__blanc {
+  color: #ffffff;
+}
+
+/* Gestion typo rem */
+:root {
+  font-size: 18px;
+}
+
+/* Implantation de border-bodx*/
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* Privilégier l'appel aux classes en HTML plutôt que d'ajouter l'attribut sur chaque élément */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex__centrage {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex__centrage-horizontal {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex__centrage-vertical {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex__colonne {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex__row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex__space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex__end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+/* Propriétés de mise en forme */
+.fond__gris {
+  background-color: #f6f6f6;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.espacement--50px {
+  margin: 50px 0;
+}
+
+@media only screen and (min-width: 960px) {
+  .responsive--row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/* Configuration globale d'une brique (commune aux plats et aux restaurants) */
+.brique {
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  /* Permet de contrôler width */
+  width: calc(100%);
+  /* Transforme la valeur en px */
+  margin: 10px;
+  border-radius: 20px;
+  -webkit-box-shadow: #353535 0px 10px 10px -10px;
+          box-shadow: #353535 0px 10px 10px -10px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  /* Gère la configuration initiale du texte */
+}
+
+.brique:hover {
+  -webkit-box-shadow: #353535 0 5px 10px -2px;
+          box-shadow: #353535 0 5px 10px -2px;
+}
+
+.brique__texte {
+  padding: 0 5%;
+  width: calc(90%);
+  /* Width en calc pour avoir une valeur en pourcentage convertie en pixels */
+}
+
+.brique i {
+  cursor: pointer;
+  /* Rend tous les icones cliquables */
+}
+
+/* Rend div entièrement cliquable (attention à mettre un z-index supérieur en hover sur l'élément (icônes notamment) */
+.bloc-cliquable {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Gestion SVG */
+.svg {
+  display: inline-block;
+  /* Propriété nécessaire à la bonne gestion du SVG */
+}
+
+.svg__animation:hover .svg__animation--fill {
+  -webkit-animation: animation--fill 2s cubic-bezier(0.5, 0.5, 0, 1) infinite forwards;
+          animation: animation--fill 2s cubic-bezier(0.5, 0.5, 0, 1) infinite forwards;
+}
+
+.svg__animation:active .svg__animation--fill {
+  -webkit-animation: animation--fill 0s cubic-bezier(0.5, 0.5, 0, 1) forwards;
+          animation: animation--fill 0s cubic-bezier(0.5, 0.5, 0, 1) forwards;
+}
+
+.svg__animation:hover .svg__animation--pulse {
+  -webkit-animation: animation--pulse 2s cubic-bezier(0.5, 0.5, 0, 1) infinite;
+          animation: animation--pulse 2s cubic-bezier(0.5, 0.5, 0, 1) infinite;
+}
+
+.svg__animation--fill {
+  /*Possibilité de créer une variante par type d'animation */
+  z-index: 1;
+  position: absolute;
+  min-height: 1.5rem;
+  width: 1.5rem;
+  fill: #9356DC;
+  opacity: 0;
+  /* Changement de la couleur avec variable. Violet par défaut */
+}
+
+.svg__animation--pulse {
+  position: relative;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: transparent;
+  stroke: #353535;
+  stroke-width: 30;
+  z-index: 2;
+  overflow: visible;
+}
+
+/* Animation loading spinner (à trigger avec du JS à terme) */
+.loader {
+  border: 10px solid transparent;
+  border-radius: 50%;
+  border-top: 10px solid #FF79DA;
+  border-bottom: 10px solid #9356DC;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  -webkit-animation: loader 5s cubic-bezier(0.61, 1.05, 0.42, 1.26) forwards;
+          animation: loader 5s cubic-bezier(0.61, 1.05, 0.42, 1.26) forwards;
+  opacity: 1;
+}
+
+.loader__background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 3;
+  -webkit-animation: background 5s forwards;
+          animation: background 5s forwards;
+}
+
+/* Configuration globale boutons */
+.bouton {
+  border-radius: 30px;
+  padding: 20px 30px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: #353535 0 10px 10px -10px;
+          box-shadow: #353535 0 10px 10px -10px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+  /* Configuration des CTA */
+}
+
+.bouton:hover {
+  -webkit-box-shadow: #353535 0 5px 10px -2px;
+          box-shadow: #353535 0 5px 10px -2px;
+}
+
+.bouton__CTA {
+  font-size: 1.25rem;
+  font-family: "Roboto", Verdana, Arial, sans-serif;
+  /* Gestion de la couleur */
+}
+
+.bouton__CTA:hover {
+  -webkit-filter: brightness(106%);
+          filter: brightness(106%);
+  /* éclaircissement du bouton au survol */
+}
+
+.bouton__CTA--violet {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(24%, #FF79DA), to(#9356DC));
+  background: linear-gradient(180deg, #FF79DA 24%, #9356DC 100%);
+  color: #ffffff;
+}
+
+/* Barre du menu avec logo */
+.header {
+  height: 80px;
+  width: 100%;
+  /* Comportement logo sur page restaurant */
+}
+
+.header img {
+  height: 50%;
+}
+
+.header--restaurant a {
+  display: inline-block;
+  margin: auto;
+  position: relative;
+  right: calc(2% + 3px);
+}
+
+/* Bouton précédent header */
+input[type="button"] {
+  background-color: transparent;
+  border: none;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.bouton-precedent {
+  margin-left: 2%;
+  width: 2rem;
+}
+
+/** Header page restaurant **/
+/* Image en bannière */
+.banner img {
+  height: 33vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/* Nom du restaurant */
+.section__nom-restaurant {
+  width: 100%;
+  position: relative;
+  border-radius: 50px 50px 0 0;
+  margin-top: -50px;
+  padding: 20px 30px 10px 30px;
+}
+
+/* footer (commun à toutes les pages) */
+footer {
+  padding: 30px;
+  color: #ffffff;
+  background-color: #353535;
+}
+
+footer i {
+  width: 1rem;
+  margin-right: 15px;
+}
+
+/* Configuration spécifique aux plats des menus (page restaurant) */
+.brique--item-menu {
+  height: 100px;
+  background-color: #ffffff;
+  -webkit-animation: card-apparition 0.5s ease-in-out both;
+          animation: card-apparition 0.5s ease-in-out both;
+  overflow: hidden;
+  /* Gestion plus spécifique du texte. Se combine avec .brique__texte */
+  /* Activation de l'animation au survol de la brique entière */
+  /* Animation des items lors du chargement de la page */
+}
+
+@media only screen and (min-width: 1024px) {
+  .brique--item-menu {
+    margin-top: 30px;
+    width: 30%;
+  }
+}
+
+.brique--item-menu__bloc-texte {
+  padding: 0 5%;
+  width: calc(80%);
+  /* Width en calc pour avoir une valeur en pourcentage convertie en pixels */
+}
+
+.brique--item-menu__texte {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* les éléments plus hauts sont obligatoires pour l'activer */
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.brique--item-menu__texte:nth-child(2) {
+  /* S'applique sur la 2ème ligne de la brique */
+  position: relative;
+  top: -0.75rem;
+}
+
+.brique--item-menu:hover > .validation-choix {
+  -webkit-animation: animation-brique-menu--survol 400ms ease;
+          animation: animation-brique-menu--survol 400ms ease;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.brique--item-menu:hover > .validation-choix i {
+  -webkit-animation: animation-brique-menu__icone 400ms linear forwards;
+          animation: animation-brique-menu__icone 400ms linear forwards;
+}
+
+.brique--item-menu:hover .brique--item-menu__bloc-texte {
+  -webkit-animation: animation-brique-menu__texte 350ms linear forwards;
+          animation: animation-brique-menu__texte 350ms linear forwards;
+}
+
+.brique--item-menu:nth-child(1) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+
+.brique--item-menu:nth-child(2) {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+
+.brique--item-menu:nth-child(3) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+.brique--item-menu:nth-child(4) {
+  -webkit-animation-delay: 550ms;
+          animation-delay: 550ms;
+}
+
+/* Gestion de l'animation de validation des plats du menu. Se combine avec .brique--item__texte. */
+.validation-choix {
+  position: absolute;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.validation-choix__prix {
+  padding-top: 50px;
+  z-index: 2;
+}
+
+.validation-choix__bloc-animation {
+  background-color: #99E2D0;
+  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 20px 20px 0;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  /* Rend le bloc invisible avec overflow: hidden de la brique */
+  font-size: 1.5rem;
+}
+
+/* Configuration des sous-titres des sections menus sur les pages restaurants */
+.underline {
+  padding-bottom: 0.5rem;
+  width: 35px;
+}
+
+.underline__bleu {
+  border-bottom: 3px solid #99E2D0;
+}
+
+/** Configuration page d'accueil **/
+/* Bloc recherche ville */
+.selection-ville {
+  color: #353535;
+  background-color: #eaeaea;
+}
+
+.selection-ville i {
+  margin-right: 0.875rem;
+}
+
+input[type=text] {
+  background-color: transparent;
+  border: none;
+  width: 70%;
+}
+
+/*Items expliquant le déroulé */
+.brique-fonctionnement {
+  padding: 30px 15px;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  margin: 20px 0;
+  -webkit-box-shadow: #353535 0px 10px 10px -10px;
+          box-shadow: #353535 0px 10px 10px -10px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  /* Rond avec les numéros */
+}
+
+.brique-fonctionnement:hover {
+  -webkit-box-shadow: #353535 0 5px 10px -2px;
+          box-shadow: #353535 0 5px 10px -2px;
+}
+
+@media only screen and (min-width: 1366px) {
+  .brique-fonctionnement {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .brique-fonctionnement {
+    width: 30%;
+    margin: 10px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+}
+
+.brique-fonctionnement p {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.brique-fonctionnement i {
+  color: #353535;
+  margin-right: 1.25rem;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 960px) {
+  .brique-fonctionnement i {
+    font-size: 2rem;
+  }
+}
+
+.brique-fonctionnement__rond {
+  display: inline-block;
+  /* Génération du background */
+  color: #ffffff;
+  font-family: "Roboto", Verdana, Arial, sans-serif;
+  font-size: 1.25rem;
+  margin-left: -30px;
+  margin-right: 20px;
+  text-align: center;
+  background-color: #9356DC;
+  height: 36px;
+  min-width: 36px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1366px) {
+  .brique-fonctionnement__rond {
+    margin-left: -40px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .brique-fonctionnement__rond {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    /* Centre l'élément en absolu */
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.5rem;
+    padding: 10px;
+    height: 50px;
+    min-width: 50px;
+  }
+}
+
+.brique-fonctionnement:hover {
+  background: #9356DC;
+  background: rgba(147, 86, 220, 0.2);
+}
+
+.brique-fonctionnement:hover i {
+  color: #9356DC;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  /* Synchronise le changement de couleur */
+}
+
+/* Configuration spécifique aux restaurants (page d'accueil) */
+.brique--restaurant {
+  height: 250px;
+  padding-bottom: 20px;
+  background-color: #ffffff;
+  margin: 20px 0;
+}
+
+@media only screen and (min-width: 960px) {
+  .brique--restaurant {
+    width: 40%;
+    margin: 30px;
+  }
+}
+
+.brique--restaurant__bloc-nouveau {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0 15px;
+  background-color: #99E2D0;
+  color: #1b6150;
+  /* Couleur bloc "Nouveau" en variable*/
+}
+
+.brique--restaurant__bloc-like {
+  position: absolute;
+  /* Positionne le bloc like sur la brique */
+  bottom: 10%;
+  right: 20px;
+}
+
+.brique--restaurant img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 75%;
+  border-radius: 20px 20px 0 0;
+  /* Angles dépendants de .brique */
+}
+
+.brique--restaurant__texte {
+  padding: 0 5%;
+  width: calc(90%);
+  /* Width en calc pour avoir une valeur en pourcentage convertie en pixels */
+  line-height: 0.25rem;
+  /*  Valeur basse pour rapprocher les éléments entre eux */
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,27 @@
+/* Configuration variables  */
+//couleurs
+$couleur--violet: #9356DC;
+$couleur--rose: #FF79DA;
+$couleur--vert: #99E2D0;
+$couleur--gris-clair: #f6f6f6;
+$couleur--gris: #eaeaea;
+$couleur--gris-fonce: #353535;
+$couleur--noir: #000000;
+$couleur--blanc: #ffffff;
+
+//dégradés
+$gradient--violet: linear-gradient(180deg, $couleur--rose 24%, $couleur--violet 100%);
+
+//border-radius
+$border-radius--bouton: 30px;
+$border-radius--brique: 20px;
+
+//résolution écrans
+$very-small: 360px;
+$small: 494px;
+$phone: 768px;
+$tablet: 960px;
+$medium: 1024px;
+$laptop: 1366px;
+$large: 1444px;
+$very-large: 1920px;

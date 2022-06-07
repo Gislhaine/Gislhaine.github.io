@@ -1,0 +1,84 @@
+/* Configuration spécifique aux plats des menus (page restaurant) */
+.brique--item-menu {
+	height: 100px;
+	background-color: $couleur--blanc;
+	animation: card-apparition 0.5s ease-in-out both;
+	overflow: hidden;
+	@include mediaqueries-min($medium) {
+		margin-top: 30px;
+		width: 30%;
+	}
+	&__bloc-texte {
+		padding: 0 5%;
+		width: calc(80%); /* Width en calc pour avoir une valeur en pourcentage convertie en pixels */
+	}
+	/* Gestion plus spécifique du texte. Se combine avec .brique__texte */
+	&__texte {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis; /* les éléments plus hauts sont obligatoires pour l'activer */
+		transition: all 400ms ease-in-out;
+		&:nth-child(2) { /* S'applique sur la 2ème ligne de la brique */
+			position: relative;
+			top: -0.75rem;
+		}
+	}
+	/* Activation de l'animation au survol de la brique entière */
+	&:hover > .validation-choix {
+		animation: animation-brique-menu--survol 400ms ease;
+		transform: translateX(-100%);
+		& i {
+			animation: animation-brique-menu__icone 400ms linear forwards;
+		}
+	}
+	&:hover .brique--item-menu__bloc-texte {
+		animation: animation-brique-menu__texte 350ms linear forwards;
+	}
+	/* Animation des items lors du chargement de la page */
+	&:nth-child(1) {
+		animation-delay: 100ms;
+	}
+	&:nth-child(2) {
+		animation-delay: 250ms;
+	}
+	&:nth-child(3) {
+		animation-delay: 400ms;
+	}
+	&:nth-child(4) {
+		animation-delay: 550ms;
+	}
+}
+
+/* Gestion de l'animation de validation des plats du menu. Se combine avec .brique--item__texte. */
+.validation-choix {
+	position: absolute;
+	right: 0;
+	width: 20%;
+	height: 100%;
+	transition: all 300ms ease;
+	&__prix {
+		padding-top: 50px;
+		z-index: 2;
+	}
+	&__bloc-animation {
+		background-color: $couleur--vert;
+		color: $couleur--blanc;
+		height: 100%;
+		width: 100%;
+		border-radius: 0 20px 20px 0;
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		right: -100%; /* Rend le bloc invisible avec overflow: hidden de la brique */
+		font-size: 1.5rem;
+	}
+}
+
+/* Configuration des sous-titres des sections menus sur les pages restaurants */
+.underline {
+	padding-bottom: 0.5rem;
+	width: 35px;
+	&__bleu {
+		border-bottom: 3px solid $couleur--vert;
+	}
+}

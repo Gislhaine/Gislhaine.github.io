@@ -1,0 +1,118 @@
+/** Configuration page d'accueil **/
+/* Bloc recherche ville */
+.selection-ville {
+	color: $couleur--gris-fonce;
+	background-color: $couleur--gris;
+	& i {
+		margin-right: map-get($taille-texte, texte);
+	}
+}
+
+input[type=text] {
+    background-color: transparent;
+    border: none;
+	width: 70%;
+}
+
+/*Items expliquant le déroulé */
+.brique-fonctionnement {
+	padding: 30px 15px;
+	background-color: $couleur--gris-clair;
+	border-radius: $border-radius--brique;
+	margin: 20px 0;
+	@include ombre-brique;
+	@include mediaqueries-min($laptop) {
+		justify-content: center;
+	}
+	@include mediaqueries-min($tablet) {
+		width: 30%;
+		margin: 10px;
+		padding: map-get($taille-texte, titre-petit);
+		text-align: center;
+	}
+	p {
+		font-weight: map-get($graisse-texte, bold);
+		font-size: map-get($taille-texte, titre-petit);
+	}
+	i {
+		color: $couleur--gris-fonce;
+		margin-right: map-get($taille-texte, titre-petit);
+		font-size: map-get($taille-texte, titre-moyen);
+		@include mediaqueries-min($tablet) {
+			font-size: map-get($taille-texte, titre-grand);
+		}
+	}
+	/* Rond avec les numéros */
+	&__rond {
+		display: inline-block; /* Génération du background */
+		color: $couleur--blanc;
+		font-family: $typo--texte;
+		font-size: map-get($taille-texte, titre-petit);
+		margin-left: -30px;
+		margin-right: 20px;
+		text-align: center;
+		background-color: $couleur--violet;
+		height: 36px;
+		min-width: 36px;
+		padding: 5px;
+		border-radius: 50%;
+		@include mediaqueries-between($tablet, $laptop) {
+			margin-left: -40px;
+		}
+		@include mediaqueries-min($tablet) {
+			position: absolute;
+			top: -24px;
+			left: 50%;
+			transform: translateX(-50%); /* Centre l'élément en absolu */
+			margin-left: 0;
+			margin-right: 0;
+			font-size: map-get($taille-texte, titre-moyen);
+			padding: 10px;
+			height: 50px;
+			min-width: 50px;
+		}
+	}
+	&:hover {
+		@include background-opacity;
+		& i {
+			color: $couleur--violet;
+			transition: all 250ms ease; /* Synchronise le changement de couleur */
+		}
+	}
+}
+
+/* Configuration spécifique aux restaurants (page d'accueil) */
+.brique--restaurant {
+	height: 250px;
+	padding-bottom: 20px;
+	background-color: $couleur--blanc;
+	margin: 20px 0;
+	@include mediaqueries-min($tablet) {
+		width: 40%;
+		margin: 30px;
+	}
+	&__bloc-nouveau {
+		display: inline-block;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		padding: 0 15px;
+		@include brique-bloc-couleur; /* Couleur bloc "Nouveau" en variable*/
+	}
+	&__bloc-like {
+		position: absolute; /* Positionne le bloc like sur la brique */
+		bottom: 10%;
+		right: 20px;
+	}
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 75%;
+		border-radius: 20px 20px 0 0; /* Angles dépendants de .brique */
+	}
+	&__texte {
+		padding: 0 5%;
+		width: calc(90%); /* Width en calc pour avoir une valeur en pourcentage convertie en pixels */
+		line-height: 0.25rem; /*  Valeur basse pour rapprocher les éléments entre eux */
+	}
+}

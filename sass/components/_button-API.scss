@@ -1,0 +1,21 @@
+/*  BOUTONS - Map et Commander  */
+
+.btn {
+	color:#ffffff;
+	background: linear-gradient(to top left, #9356DC,#FF79DA);
+	box-shadow: 0 5px 10px 0 rgba( 0, 0, 0, 0.3);
+    text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	width: 200px;
+	height: 50px;
+	margin: 20px auto;
+	transition: opacity 1s;
+}
+
+.btn:hover {
+	opacity: 0.5;
+	box-shadow: 0 5px 10px 0 rgba( 0, 0, 0, 0.4);
+}

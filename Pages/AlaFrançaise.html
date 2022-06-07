@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhMyFood - À la française</title>
+    <link rel="stylesheet" href="../sass/normalize.css">
+    <link rel="stylesheet" href="../sass/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Shrikhand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6b285d253e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--Chargement-->
+    <div class="loader"></div>
+    <div class="loader__background"></div>
+    <nav>
+        <div class="header header--restaurant flex flex__centrage-vertical">
+            <input type="button" class="bouton-precedent cursor" onclick="javascript:history.back(-1);" value="&#xf060;" />
+            <a href="/index.html">
+                <img src="../images/logo/ohmyfood@2x.svg" alt="logo-ohmyfood">
+            </a>
+        </div>
+    </nav>
+    <header>
+        <div class="banner">
+            <img src="../images/restaurants/a-la-francaise.jpg" alt="A la française">
+        </div>
+        <div class="fond__gris section__nom-restaurant">
+            <div class="flex flex__centrage-vertical flex__space-between">
+                <h1 class="titre__typo-logo">À la française</h1>
+                <div class="svg__animation">
+                    <svg class="svg svg__animation--fill cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+							<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+							<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+						</svg>
+                    <svg class="svg svg__animation--pulse cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+							<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+							<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+						</svg>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Entrées-->
+    <section class="fond__gris padding">
+        <div>
+            <h2 class="texte__light texte__majuscules titre__petit underline underline__bleu">Entrées</h2>
+        </div>
+        <div class="responsive--row flex flex__centrage flex__colonne">
+            <!--Structuration des blocs-->
+            <!--Article 1-->
+            <div class="brique brique--item-menu cursor flex flex__centrage-vertical">
+                <!--Style par item du menu-->
+                <div class="brique--item-menu__bloc-texte">
+                    <h3 class="brique--item-menu__texte">Tartare de poulpe acidulé</h3>
+                    <p class="brique--item-menu__texte">Aux zestes d'orange</p>
+                </div>
+                <div class="validation-choix">
+                    <!--Placement prix et icône extrémité-->
+                    <div class="validation-choix__prix flex flex__centrage-horizontal">
+                        <p class="texte__gras">25€</p>
+                    </div>
+                    <div class="validation-choix__bloc-animation flex flex__centrage">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <!--Article 2-->
+            <div class="brique brique--item-menu cursor pointer flex flex__centrage-vertical">
+                <!--Style par item du menu-->
+                <div class="brique--item-menu__bloc-texte">
+                    <h3 class="brique--item-menu__texte">Velouté de légumes d'antan</h3>
+                    <p class="brique--item-menu__texte">Carotte, panais, topinambour</p>
+                </div>
+                <div class="validation-choix">
+                    <!--Placement prix et icône extrémité-->
+                    <div class="validation-choix__prix flex flex__centrage-horizontal">
+                        <p class="texte__gras">35€</p>
+                    </div>
+                    <div class="validation-choix__bloc-animation flex flex__centrage">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <!--Article 3-->
+            <div class="brique brique--item-menu cursor pointer flex flex__centrage-vertical">
+                <!--Style par item du menu-->
+                <div class="brique--item-menu__bloc-texte">
+                    <h3 class="brique--item-menu__texte">Soupe à l'oignon</h3>
+                    <p class="brique--item-menu__texte">Revisitée</p>
+                </div>
+                <div class="validation-choix">
+                    <!--Placement prix et icône extrémité-->
+                    <div class="validation-choix__prix flex flex__centrage-horizontal">
+                        <p class="texte__gras">20€</p>
+                    </div>
+                    <div class="validation-choix__bloc-animation flex flex__centrage">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Plats-->
+    <section class="fond__gris padding">
+        <div>
+            <h2 class="texte__light texte__majuscules titre__petit underline underline__bleu">Plats</h2>
+        </div>
+        <div class="responsive--row flex flex__centrage flex__colonne">
+            <!--Structuration des blocs-->
+            <!--Article 1-->
+            <div class="brique brique--item-menu cursor pointer flex flex__centrage-vertical">
+                <!--Style par item du menu-->
+                <div class="brique--item-menu__bloc-texte">
+                    <h3 class="brique--item-menu__texte">Coquilles Saint-Jacques</h3>
+                    <p class="brique--item-menu__texte">Accompagnées d'une purée de panais</p>
+                </div>
+                <div class="validation-choix">
+                    <!--Placement prix et icône extrémité-->
+                    <div class="validation-choix__prix flex flex__centrage-horizontal">
+                        <p class="texte__gras">40€</p>
+                    </div>
+                    <div class="validation-choix__bloc-animation flex flex__centrage">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <!--Article 2-->
+            <div class="brique brique--item-menu cursor pointer flex flex__centrage-vertical">
+                <!--Style par item du menu-->
+                <div class="brique--item-menu__bloc-texte">
+                    <h3 class="brique--item-menu__texte">Magret de canard</h3>
+                    <p class="brique--item-menu__texte">Et parmentier de pommes de terres</p>
+                </div>
+                <div class="validation-choix">
+                    <!--Placement prix et icône extrémité-->
+                    <div class="validation-choix__prix flex flex__centrage-horizontal">
+                        <p class="texte__gras">35€</p>
+                    </div>
+                    <div class="validation-choix__bloc-animation flex flex__centrage">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <!--Article 3-->
+            <div class="brique brique--item-menu cursor pointer flex flex__centrage-vertical">
+                <!--Style par item du menu-->
+                <div class="brique--item-menu__bloc-texte">
+                    <h3 class="brique--item-menu__texte">Pigeonneau d’Ille-et-Vilaine</h3>
+                    <p class="brique--item-menu__texte">Sur son lit de gnocchis aux légumes</p>
+                </div>
+                <div class="validation-choix">
+                    <!--Placement prix et icône extrémité-->
+                    <div class="validation-choix__prix flex flex__centrage-horizontal">
+                        <p class="texte__gras">44€</p>
+                    </div>
+                    <div class="validation-choix__bloc-animation flex flex__centrage">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Desserts-->
+    <section class="fond__gris padding">
+        <div>
+            <h2 class="texte__light texte__majuscules titre__petit underline underline__bleu">Desserts</h2>
+        </div>
+        <div class="responsive--row flex flex__centrage flex__colonne">
+            <!--Structuration des blocs-->
+            <!--Artile 1-->
+            <div class="brique brique--item-menu cursor pointer flex flex__centrage-vertical">
+                <!--Style par item du menu-->
+                <div class="brique--item-menu__bloc-texte">
+                    <h3 class="brique--item-menu__texte">Pétales de violettes glacés</h3>
+                    <p class="brique--item-menu__texte">Et purée de noisettes</p>
+                </div>
+                <div class="validation-choix">
+                    <!--Placement prix et icône extrémité-->
+                    <div class="validation-choix__prix flex flex__centrage-horizontal">
+                        <p class="texte__gras">18€</p>
+                    </div>
+                    <div class="validation-choix__bloc-animation flex flex__centrage">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <!--Article 2-->
+            <div class="brique brique--item-menu cursor pointer flex flex__centrage-vertical">
+                <!--Style par item du menu-->
+                <div class="brique--item-menu__bloc-texte">
+                    <h3 class="brique--item-menu__texte">Fondant au chocolat</h3>
+                    <p class="brique--item-menu__texte">Revisité</p>
+                </div>
+                <div class="validation-choix">
+                    <!--Placement prix et icône extrémité-->
+                    <div class="validation-choix__prix flex flex__centrage-horizontal">
+                        <p class="texte__gras">22€</p>
+                    </div>
+                    <div class="validation-choix__bloc-animation flex flex__centrage">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <!--Article 3-->
+            <div class="brique brique--item-menu cursor pointer flex flex__centrage-vertical">
+                <!--Style par item du menu-->
+                <div class="brique--item-menu__texte brique__texte ">
+                    <h3 class="brique--item-menu__texte">Millefeuille croustillant</h3>
+                    <h4 class="brique--item-menu__texte">Myrtilles et pâte d’amande</h4>
+                </div>
+                <div class="validation-choix">
+                    <!--Placement prix et icône extrémité-->
+                    <div class="validation-choix__prix flex flex__centrage-horizontal">
+                        <p class="texte__gras">23€</p>
+                    </div>
+                    <div class="validation-choix__bloc-animation flex flex__centrage">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <!--Bouton commande-->
+            <div class="padding espacement--50px">
+                <button class="bouton bouton__CTA bouton__CTA--violet">Commander</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h4 class="titre__typo-logo texte__semi-bold texte__blanc">ohmyfood</h4>
+        <p>
+            <i class="fas fa-utensils"></i>
+            <a class="texte__blanc texte__semi-bold" href="#">Proposer un restaurant</a>
+        </p>
+        <p>
+            <i class="fas fa-hands-helping"></i>
+            <a class="texte__blanc texte__semi-bold" href="#">Devenir partenaire</a>
+        </p>
+        <p>
+            <a class="texte__blanc texte__semi-bold" href="#">Mentions légales</a>
+        </p>
+        <p>
+            <a class="texte__blanc texte__semi-bold" href="mailto:gueigislhaine@gmail.com">Contact</a>
+        </p>
+    </footer>
+</body>
+
+</html>

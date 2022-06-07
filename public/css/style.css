@@ -1,0 +1,667 @@
+@charset "UTF-8";
+/* Importation 7 1 */
+/* Configuration variables  */
+/** Permet de gérer les mediaqueries avec les variables issues de "Breakpoints" **/
+/** Gestion des ombres des briques. Les deux sont identiques actuellement mais sont implantées selon l'usage attribué. Pourra être modifier ultérieurement **/
+/* Changement couleur #xxx en RGB avec gestion de l'opacité */
+/* Bloc de couleur plus foncé (ex: bloc "nouveau" sur les restaurants page accueil */
+/* Stroke svg de couleur plus foncé (ex: bloc "like" sur les restaurants page accueil */
+/*** Animations ***/
+/* Animation pulsion */
+@keyframes animation--pulse {
+  0% {
+    transform: scale(1.1);
+  }
+  15% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+/* Animation remplissage */
+@keyframes animation--fill {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  15% {
+    transform: scale(0.25);
+    opacity: 0.25;
+  }
+  45% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  75% {
+    transform: scale(0.75);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+/* Animation .validation-choix pour les items des menus */
+@keyframes animation-brique-menu--survol {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* Animation .validation-choix pour les items des menus */
+@keyframes animation-brique-menu__texte {
+  100% {
+    width: 70%;
+  }
+}
+@keyframes animation-brique-menu__icone {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Apparition des items sur la page restaurant */
+@keyframes card-apparition {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Animation du loader (désactivé pour démonstration) */
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+}
+@keyframes background {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+p,
+a {
+  font-family: "Roboto", Verdana, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", Verdana, Arial, sans-serif;
+}
+
+/*** Configuration des classes pour modifier les typographies
+/** Privilégier l'appel aux classes en HTML plutôt que d'ajouter l'attribut sur chaque élément **/
+/* Gestion des tailles */
+.titre__partie {
+  font-size: 1.5rem;
+}
+.titre__typo-logo {
+  font-family: "Shrikhand", Verdana, Arial, sans-serif;
+}
+.titre__petit {
+  font-size: 0.875rem;
+}
+
+/* Gestion des graisses et de la mise en forme */
+.texte__majuscules {
+  text-transform: uppercase;
+}
+.texte__centrer {
+  text-align: center;
+}
+.texte__gras {
+  font-weight: 700;
+}
+.texte__semi-bold {
+  font-weight: 400;
+}
+.texte__light {
+  font-weight: 100;
+}
+.texte__blanc {
+  color: #ffffff;
+}
+
+/* Gestion typo rem */
+:root {
+  font-size: 18px;
+}
+
+/* Implantation de border-bodx*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* Privilégier l'appel aux classes en HTML plutôt que d'ajouter l'attribut sur chaque élément */
+.flex {
+  display: flex;
+}
+.flex__centrage {
+  justify-content: center;
+  align-items: center;
+}
+.flex__centrage-horizontal {
+  justify-content: center;
+}
+.flex__centrage-vertical {
+  align-items: center;
+}
+.flex__colonne {
+  flex-direction: column;
+}
+.flex__row {
+  flex-direction: row;
+}
+.flex__space-between {
+  justify-content: space-between;
+}
+.flex__end {
+  justify-content: end;
+}
+
+/* Propriétés de mise en forme */
+.fond__gris {
+  background-color: #f6f6f6;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.espacement--50px {
+  margin: 50px 0;
+}
+
+@media only screen and (min-width: 960px) {
+  .responsive--row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* Configuration globale d'une brique (commune aux plats et aux restaurants) */
+.brique {
+  position: relative;
+  flex-shrink: 0;
+  /* Permet de contrôler width */
+  width: 100%;
+  /* Transforme la valeur en px */
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: #353535 0px 10px 10px -10px;
+  transition: all 200ms ease;
+  /* Gère la configuration initiale du texte */
+}
+.brique:hover {
+  box-shadow: #353535 0 5px 10px -2px;
+}
+.brique__texte {
+  padding: 0 5%;
+  width: 90%;
+  /* Width en calc pour avoir une valeur en pourcentage convertie en pixels */
+}
+.brique i {
+  cursor: pointer;
+  /* Rend tous les icones cliquables */
+}
+
+/* Rend div entièrement cliquable (attention à mettre un z-index supérieur en hover sur l'élément (icônes notamment) */
+.bloc-cliquable {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Gestion SVG */
+.svg {
+  display: inline-block;
+  /* Propriété nécessaire à la bonne gestion du SVG */
+}
+.svg__animation:hover .svg__animation--fill {
+  animation: animation--fill 2s cubic-bezier(0.5, 0.5, 0, 1) infinite forwards;
+}
+.svg__animation:active .svg__animation--fill {
+  animation: animation--fill 0s cubic-bezier(0.5, 0.5, 0, 1) forwards;
+}
+.svg__animation:hover .svg__animation--pulse {
+  animation: animation--pulse 2s cubic-bezier(0.5, 0.5, 0, 1) infinite;
+}
+.svg__animation--fill {
+  /*Possibilité de créer une variante par type d'animation */
+  z-index: 1;
+  position: absolute;
+  min-height: 1.5rem;
+  width: 1.5rem;
+  fill: #9356DC;
+  opacity: 0;
+  /* Changement de la couleur avec variable. Violet par défaut */
+}
+.svg__animation--pulse {
+  position: relative;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: transparent;
+  stroke: #353535;
+  stroke-width: 30;
+  z-index: 2;
+  overflow: visible;
+}
+
+/* Animation loading spinner (à trigger avec du JS à terme) */
+.loader {
+  border: 10px solid transparent;
+  border-radius: 50%;
+  border-top: 10px solid #FF79DA;
+  border-bottom: 10px solid #9356DC;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  animation: loader 5s cubic-bezier(0.61, 1.05, 0.42, 1.26) forwards;
+  opacity: 1;
+}
+.loader__background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 3;
+  animation: background 5s forwards;
+}
+
+/* Configuration globale boutons */
+.bouton {
+  border-radius: 30px;
+  padding: 20px 30px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: #353535 0 10px 10px -10px;
+  transition: all 200ms ease;
+  transition: all 400ms ease;
+  /* Configuration des CTA */
+}
+.bouton:hover {
+  box-shadow: #353535 0 5px 10px -2px;
+}
+.bouton__CTA {
+  font-size: 1.25rem;
+  font-family: "Roboto", Verdana, Arial, sans-serif;
+  /* Gestion de la couleur */
+}
+.bouton__CTA:hover {
+  filter: brightness(106%);
+  /* éclaircissement du bouton au survol */
+}
+.bouton__CTA--violet {
+  background: linear-gradient(180deg, #FF79DA 24%, #9356DC 100%);
+  color: #ffffff;
+}
+
+/* Barre du menu avec logo */
+.header {
+  height: 80px;
+  width: 100%;
+  /* Comportement logo sur page restaurant */
+}
+.header img {
+  height: 50%;
+}
+.header--restaurant a {
+  display: inline-block;
+  margin: auto;
+  position: relative;
+  right: calc(2% + 3px);
+}
+
+/* Bouton précédent header */
+input[type=button] {
+  background-color: transparent;
+  border: none;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.bouton-precedent {
+  margin-left: 2%;
+  width: 2rem;
+}
+
+/** Header page restaurant **/
+/* Image en bannière */
+.banner img {
+  height: 33vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Nom du restaurant */
+.section__nom-restaurant {
+  width: 100%;
+  position: relative;
+  border-radius: 50px 50px 0 0;
+  margin-top: -50px;
+  padding: 20px 30px 10px 30px;
+}
+
+/* footer (commun à toutes les pages) */
+footer {
+  padding: 30px;
+  color: #ffffff;
+  background-color: #353535;
+}
+footer i {
+  width: 1rem;
+  margin-right: 15px;
+}
+
+/* Configuration spécifique aux plats des menus (page restaurant) */
+.brique--item-menu {
+  height: 100px;
+  background-color: #ffffff;
+  animation: card-apparition 0.5s ease-in-out both;
+  overflow: hidden;
+  /* Gestion plus spécifique du texte. Se combine avec .brique__texte */
+  /* Activation de l'animation au survol de la brique entière */
+  /* Animation des items lors du chargement de la page */
+}
+@media only screen and (min-width: 1024px) {
+  .brique--item-menu {
+    margin-top: 30px;
+    width: 30%;
+  }
+}
+.brique--item-menu__bloc-texte {
+  padding: 0 5%;
+  width: 80%;
+  /* Width en calc pour avoir une valeur en pourcentage convertie en pixels */
+}
+.brique--item-menu__texte {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* les éléments plus hauts sont obligatoires pour l'activer */
+  transition: all 400ms ease-in-out;
+}
+.brique--item-menu__texte:nth-child(2) {
+  /* S'applique sur la 2ème ligne de la brique */
+  position: relative;
+  top: -0.75rem;
+}
+.brique--item-menu:hover > .validation-choix {
+  animation: animation-brique-menu--survol 400ms ease;
+  transform: translateX(-100%);
+}
+.brique--item-menu:hover > .validation-choix i {
+  animation: animation-brique-menu__icone 400ms linear forwards;
+}
+.brique--item-menu:hover .brique--item-menu__bloc-texte {
+  animation: animation-brique-menu__texte 350ms linear forwards;
+}
+.brique--item-menu:nth-child(1) {
+  animation-delay: 100ms;
+}
+.brique--item-menu:nth-child(2) {
+  animation-delay: 250ms;
+}
+.brique--item-menu:nth-child(3) {
+  animation-delay: 400ms;
+}
+.brique--item-menu:nth-child(4) {
+  animation-delay: 550ms;
+}
+
+/* Gestion de l'animation de validation des plats du menu. Se combine avec .brique--item__texte. */
+.validation-choix {
+  position: absolute;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  transition: all 300ms ease;
+}
+.validation-choix__prix {
+  padding-top: 50px;
+  z-index: 2;
+}
+.validation-choix__bloc-animation {
+  background-color: #99E2D0;
+  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 20px 20px 0;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  /* Rend le bloc invisible avec overflow: hidden de la brique */
+  font-size: 1.5rem;
+}
+
+/* Configuration des sous-titres des sections menus sur les pages restaurants */
+.underline {
+  padding-bottom: 0.5rem;
+  width: 35px;
+}
+.underline__bleu {
+  border-bottom: 3px solid #99E2D0;
+}
+
+/** Configuration page d'accueil **/
+/* Bloc recherche ville */
+.selection-ville {
+  color: #353535;
+  background-color: #eaeaea;
+}
+.selection-ville i {
+  margin-right: 0.875rem;
+}
+
+input[type=text] {
+  background-color: transparent;
+  border: none;
+  width: 70%;
+}
+
+/*Items expliquant le déroulé */
+.brique-fonctionnement {
+  padding: 30px 15px;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: #353535 0px 10px 10px -10px;
+  transition: all 200ms ease;
+  /* Rond avec les numéros */
+}
+.brique-fonctionnement:hover {
+  box-shadow: #353535 0 5px 10px -2px;
+}
+@media only screen and (min-width: 1366px) {
+  .brique-fonctionnement {
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .brique-fonctionnement {
+    width: 30%;
+    margin: 10px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+}
+.brique-fonctionnement p {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.brique-fonctionnement i {
+  color: #353535;
+  margin-right: 1.25rem;
+  font-size: 1.5rem;
+}
+@media only screen and (min-width: 960px) {
+  .brique-fonctionnement i {
+    font-size: 2rem;
+  }
+}
+.brique-fonctionnement__rond {
+  display: inline-block;
+  /* Génération du background */
+  color: #ffffff;
+  font-family: "Roboto", Verdana, Arial, sans-serif;
+  font-size: 1.25rem;
+  margin-left: -30px;
+  margin-right: 20px;
+  text-align: center;
+  background-color: #9356DC;
+  height: 36px;
+  min-width: 36px;
+  padding: 5px;
+  border-radius: 50%;
+}
+@media only screen and (min-width: 960px) and (max-width: 1366px) {
+  .brique-fonctionnement__rond {
+    margin-left: -40px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .brique-fonctionnement__rond {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centre l'élément en absolu */
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.5rem;
+    padding: 10px;
+    height: 50px;
+    min-width: 50px;
+  }
+}
+.brique-fonctionnement:hover {
+  background: #9356DC;
+  background: rgba(147, 86, 220, 0.2);
+}
+.brique-fonctionnement:hover i {
+  color: #9356DC;
+  transition: all 250ms ease;
+  /* Synchronise le changement de couleur */
+}
+
+/* Configuration spécifique aux restaurants (page d'accueil) */
+.brique--restaurant {
+  height: 250px;
+  padding-bottom: 20px;
+  background-color: #ffffff;
+  margin: 20px 0;
+}
+@media only screen and (min-width: 960px) {
+  .brique--restaurant {
+    width: 40%;
+    margin: 30px;
+  }
+}
+.brique--restaurant__bloc-nouveau {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0 15px;
+  background-color: #99E2D0;
+  color: #1b6150;
+  /* Couleur bloc "Nouveau" en variable*/
+}
+.brique--restaurant__bloc-like {
+  position: absolute;
+  /* Positionne le bloc like sur la brique */
+  bottom: 10%;
+  right: 20px;
+}
+.brique--restaurant img {
+  object-fit: cover;
+  width: 100%;
+  height: 75%;
+  border-radius: 20px 20px 0 0;
+  /* Angles dépendants de .brique */
+}
+.brique--restaurant__texte {
+  padding: 0 5%;
+  width: 90%;
+  /* Width en calc pour avoir une valeur en pourcentage convertie en pixels */
+  line-height: 0.25rem;
+  /*  Valeur basse pour rapprocher les éléments entre eux */
+}
+
+/*# sourceMappingURL=style.css.map */

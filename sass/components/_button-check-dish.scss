@@ -1,0 +1,57 @@
+/*  BOUTONS - sélection plats  */
+
+.ellipse {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	flex-grow: 1;
+	margin: 20px 0 0 10px;
+}
+
+.title-sup {
+	font-weight: normal;
+}
+
+.prix {
+	padding: 38px 15px 0 15px;
+	font-weight: bold;
+}
+
+.btn-dish {
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+	cursor: pointer;
+	background-color: #fff;
+	border-radius: 15px;
+	box-shadow: 0px 5px 10px 0px rgb(220, 220, 220);
+	margin-top: 20px;
+	height: 70px;
+}
+
+.box {
+	overflow: hidden;
+	text-align: center;
+	background: $color-tertiary;
+	width: 0;
+	align-items: center;
+	transition: width 1s;
+	padding-top: 25px;
+}
+
+.check {
+	display: inline-block;
+	margin: auto;
+  	color: #fff;
+  	font-size: 25px;
+	transform: rotate(360deg);
+	transition: transform 500ms;
+}
+
+.btn-dish:hover .box {
+	width: 70px;
+}
+
+.btn-dish:hover .box > .check {
+	transform: rotate(0deg);
+}

@@ -1,0 +1,190 @@
+/** Permet de gérer les mediaqueries avec les variables issues de "Breakpoints" **/
+@mixin mediaqueries-min($width) {
+	@media only screen and (min-width: $width) {
+		@content;
+	}
+}
+
+@mixin mediaqueries-max($width) {
+	@media only screen and (max-width: $width) {
+		@content;
+	}
+}
+
+@mixin mediaqueries-between($min, $max) {
+	@media only screen and (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+/** Gestion des ombres des briques. Les deux sont identiques actuellement mais sont implantées selon l'usage attribué. Pourra être modifier ultérieurement **/
+@mixin ombre-bouton($couleur-ombre: $couleur--gris-fonce) {
+	box-shadow: $couleur-ombre 0 10px 10px -10px;
+	transition: all 200ms ease;
+	&:hover {
+		box-shadow: $couleur-ombre 0 5px 10px -2px;
+	}
+}
+
+@mixin ombre-brique($couleur-ombre: $couleur--gris-fonce) {
+	box-shadow: $couleur-ombre 0px 10px 10px -10px;
+	transition: all 200ms ease;
+	&:hover {
+		box-shadow: $couleur-ombre 0 5px 10px -2px;
+	}
+}
+
+/* Changement couleur #xxx en RGB avec gestion de l'opacité */
+@mixin background-opacity($couleur: $couleur--violet, $opacity: 0.2) {
+	background: $couleur;
+	background: rgba($couleur, $opacity);
+}
+
+/* Bloc de couleur plus foncé (ex: bloc "nouveau" sur les restaurants page accueil */
+@mixin brique-bloc-couleur($couleur-principale: $couleur--vert) {
+	background-color: $couleur-principale;
+	color: darken($color: $couleur-principale, $amount: 50%);
+}
+
+/* Stroke svg de couleur plus foncé (ex: bloc "like" sur les restaurants page accueil */
+@mixin stroke-svg($couleur-principale: $couleur--violet) {
+	stroke: darken($color: $couleur-principale, $amount: 20%);
+}
+
+/*** Animations ***/
+/* Animation pulsion */
+@mixin animation--pulse {
+	position: relative;
+	height: map-get($taille-texte, titre-moyen);
+	width: map-get($taille-texte, titre-moyen);
+	fill: transparent;
+	stroke: $couleur--gris-fonce;
+	stroke-width: 30;
+	z-index: 2;
+	overflow: visible;
+}
+
+@keyframes animation--pulse {
+	0% {
+		transform: scale(1.1);
+	}
+	15% {
+		transform: scale(1);
+	}
+	30% {
+		transform: scale(1.1);
+	}
+	45% {
+		transform: scale(1);
+	}
+	60% {
+		transform: scale(1.1);
+	}
+	75% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.1);
+	}
+}
+
+/* Animation remplissage */
+@mixin animation--fill($couleur-remplissage: $couleur--violet) {
+	z-index: 1;
+	position: absolute;
+	min-height: map-get($taille-texte, titre-moyen);
+	width: map-get($taille-texte, titre-moyen);
+	fill: $couleur-remplissage;
+	opacity: 0;
+}
+
+@keyframes animation--fill {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	15% {
+		transform: scale(0.25);
+		opacity: 0.25;
+	}
+	45% {
+		transform: scale(0.5);
+		opacity: 0.5;
+	}
+	75% {
+		transform: scale(0.75);
+		opacity: 0.75;
+	}
+	100% {
+		transform: scale(1.1);
+		opacity: 1;
+	}
+}
+
+/* Animation .validation-choix pour les items des menus */
+@keyframes animation-brique-menu--survol {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+/* Animation .validation-choix pour les items des menus */
+@keyframes animation-brique-menu__texte {
+	100% {
+		width: calc(70%);
+	}
+}
+
+@keyframes animation-brique-menu__icone {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(180deg);
+	}
+	50% {
+		transform: rotate(270deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Apparition des items sur la page restaurant */
+@keyframes card-apparition {
+	0% {
+		opacity: 0;
+		transform: translateX(-40px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Animation du loader (désactivé pour démonstration) */
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(0deg);
+		opacity: 0;
+	}
+}
+
+@keyframes background {
+	0% {
+		opacity: 0.9;
+	}
+	100% {
+		opacity: 0;
+		z-index: -1;
+	}
+}

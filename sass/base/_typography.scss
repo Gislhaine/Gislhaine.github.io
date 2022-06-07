@@ -1,0 +1,75 @@
+// Liste Polices
+$typo--logo: "Shrikhand", Verdana, Arial, sans-serif;
+$typo--texte: "Roboto", Verdana, Arial, sans-serif;
+$typo--titre: "Roboto", Verdana, Arial, sans-serif;
+$typo--icone: "Font Awesome 5 Free";
+
+// Liste tailles
+$taille-texte: (
+	texte: 0.875rem,
+	titre-petit: 1.25rem,
+	titre-moyen: 1.5rem,
+	titre-grand: 2rem
+);
+
+// Liste graisses
+$graisse-texte: (
+	light: 100,
+	normal: 400,
+	bold: 700
+);
+
+// Configuration basique des typos selon leur catégorie
+p,
+a {
+	font-family: $typo--texte;
+	font-size: map-get($taille-texte, texte);
+	font-weight: map-get($graisse-texte, light);
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $typo--titre;
+}
+
+/*** Configuration des classes pour modifier les typographies
+/** Privilégier l'appel aux classes en HTML plutôt que d'ajouter l'attribut sur chaque élément **/
+/* Gestion des tailles */
+.titre {
+	&__partie {
+		font-size: map-get($taille-texte, titre-moyen);
+	}
+	&__typo-logo {
+		font-family: $typo--logo;
+	}
+	&__petit {
+		font-size: map-get($taille-texte, texte);
+	}
+}
+
+/* Gestion des graisses et de la mise en forme */
+.texte {
+	&__majuscules {
+		text-transform: uppercase;
+	}
+	&__centrer {
+		text-align: center;
+	}
+	&__gras {
+		font-weight: map-get($graisse-texte, bold);
+	}
+	&__semi-bold {
+		font-weight: map-get($graisse-texte, normal);
+	}
+	&__light {
+		font-weight: map-get($graisse-texte, light);
+	}
+	&__blanc {
+		color: $couleur--blanc;
+	}
+}

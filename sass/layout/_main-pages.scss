@@ -1,0 +1,35 @@
+/*  MAIN PAGES  */
+
+/*  MAIN PAGES - section intro  */
+
+.photopage {
+	position: relative;
+	width: 100%;
+}
+
+.intro {
+	position: relative;
+	background-color: rgb(245, 245, 245);
+}
+
+.titreintro {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	background-color: rgb(245, 245, 245);
+	border-radius: 40px 40px 0 0;
+}
+
+/*  MAIN PAGES - section menupages  */
+
+.title-underline {
+	border-bottom: 3px solid $color-tertiary;
+	padding-bottom: 5px;
+}
+
+.menupage {
+	position: relative;
+	margin: 0px 15px 30px 15px;
+}

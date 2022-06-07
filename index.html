@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhMyFood - Accueil</title>
+    <link rel="stylesheet" href="../sass/normalize.css">
+    <link rel="stylesheet" href="./sass/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Shrikhand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6b285d253e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--Chargement-->
+    <div class="loader"></div>
+    <div class="loader__background"></div>
+    <nav>
+        <div class="header flex flex__centrage">
+            <a href="./index.html">
+                <img src="./images/logo/ohmyfood@2x.svg" alt="logo-ohmyfood">
+            </a>
+        </div>
+    </nav>
+    <section>
+        <div class="selection-ville flex flex__centrage">
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" class="texte__gras" value="Paris, Belleville">
+            </p>
+        </div>
+        <div class="padding texte__centrer fond__gris">
+            <h1 class="titre titre__partie texte__gras">Réservez le menu qui <br> vous convient</h1>
+            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+            <div class="padding">
+                <button class="bouton bouton__CTA bouton__CTA--violet">Explorer nos restaurants</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="padding">
+            <h2 class="titre titre__partie texte__gras">Fonctionnement</h2>
+            <div class="responsive--row padding flex flex__colonne flex__space-between">
+                <div class="brique brique-fonctionnement cursor flex flex__centrage-vertical">
+                    <div class="brique-fonctionnement__rond">1</div>
+                    <i class="flex__centrage fas fa-mobile-alt"></i>
+                    <p>Choisissez un restaurant</p>
+                </div>
+                <div class="brique brique-fonctionnement cursor flex flex__centrage-vertical">
+                    <div class="brique-fonctionnement__rond">2</div>
+                    <i class="flex__centrage fas fa-list"></i>
+                    <p>Composez votre menu</p>
+                </div>
+                <div class="brique brique-fonctionnement cursor flex flex__centrage-vertical">
+                    <div class="brique-fonctionnement__rond">3</div>
+                    <i class="flex__centrage fas fa-store"></i>
+                    <p>Dégustez au restaurant</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="fond__gris padding">
+            <h2 id="restaurants" class="titre titre__partie texte__gras">Restaurants</h2>
+            <!-- Briques contenant les restaurants */ -->
+            <div class="responsive--row flex flex__centrage flex__colonne">
+                <!--La Palette du gout-->
+                <div class="brique brique--restaurant flex__colonne">
+                    <a class="bloc-cliquable" href="Pages\PaletteduGoût.html"></a>
+                    <img src="./images/restaurants/palette-du-gout.jpg" alt="La palette du goût">
+                    <div class="brique--restaurant__texte">
+                        <h3>La palette du goût</h3>
+                        <p>Ménilmontant</p>
+                        <div class="brique--restaurant__bloc-nouveau">
+                            <p class="texte__gras">Nouveau</p>
+                        </div>
+                        <div class="brique--restaurant__bloc-like cursor">
+                            <div class="svg__animation">
+                                <svg class="svg svg__animation--fill cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+										<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+									</svg>
+                                <svg class="svg svg__animation--pulse cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+										<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+									</svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--La note enchantée-->
+                <div class="brique brique--restaurant flex__colonne">
+                    <a class="bloc-cliquable" href="Pages\NoteEnchantée.html"></a>
+                    <img src="./images/restaurants/la-note-enchante.jpg" alt="La note enchantée">
+                    <div class="brique--restaurant__texte">
+                        <h3>La note enchantée</h3>
+                        <p>Charonne</p>
+                        <div class="brique--restaurant__bloc-nouveau">
+                            <p class="texte__gras">Nouveau</p>
+                        </div>
+                        <div class="brique--restaurant__bloc-like cursor">
+                            <div class="svg__animation">
+                                <svg class="svg svg__animation--fill cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+										<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+									</svg>
+                                <svg class="svg svg__animation--pulse cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+										<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+									</svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--A la francaise-->
+                <div class="brique brique--restaurant flex__colonne">
+                    <a class="bloc-cliquable" href="Pages\AlaFrançaise.html"></a>
+                    <img src="./images/restaurants/a-la-francaise.jpg" alt="A la Française">
+                    <div class="brique--restaurant__texte">
+                        <h3>À la française</h3>
+                        <p>Cité rouge</p>
+                        <div class="brique--restaurant__bloc-like cursor">
+                            <div class="svg__animation">
+                                <svg class="svg svg__animation--fill cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+										<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+									</svg>
+                                <svg class="svg svg__animation--pulse cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+										<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+									</svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Le délice des sens-->
+                <div class="brique brique--restaurant flex__colonne">
+                    <a class="bloc-cliquable" href="Pages\DélicedesSens.html"></a>
+                    <img src="./images/restaurants/delice-des-sens.jpg" alt="Le délice des sens">
+                    <div class="brique--restaurant__texte">
+                        <h3>Le délice des sens</h3>
+                        <p>Folie-Méricourt</p>
+                        <div class="brique--restaurant__bloc-like cursor">
+                            <div class="svg__animation">
+                                <svg class="svg svg__animation--fill cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+										<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+									</svg>
+                                <svg class="svg svg__animation--pulse cursor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+										<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+									</svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h4 class="titre__typo-logo texte__semi-bold texte__blanc">ohmyfood</h4>
+        <p>
+            <i class="fas fa-utensils"></i>
+            <a class="texte__blanc texte__semi-bold" href="#">Proposer un restaurant</a>
+        </p>
+        <p>
+            <i class="fas fa-hands-helping"></i>
+            <a class="texte__blanc texte__semi-bold" href="#">Devenir partenaire</a>
+        </p>
+        <p>
+            <a class="texte__blanc texte__semi-bold" href="#">Mentions légales</a>
+        </p>
+        <p>
+            <a class="texte__blanc texte__semi-bold" href="mailto:gueigislhaine@gmail.com">Contact</a>
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+{
+    "devDependencies": {
+        "sass": "^1.52.2"
+    },
+    "name": "ohmyfood-gislhaine",
+    "version": "1.0.0",
+    "description": "Projet 3 ohmyfood",
+    "main": "index.js",
+    "dependencies": {
+        "anymatch": "^3.1.2",
+        "braces": "^3.0.2",
+        "chokidar": "^3.5.3",
+        "glob-parent": "^5.1.2",
+        "binary-extensions": "^2.2.0",
+        "fill-range": "^7.0.1",
+        "immutable": "^4.1.0",
+        "is-binary-path": "^2.1.0",
+        "is-extglob": "^2.1.1",
+        "is-glob": "^4.0.3",
+        "is-number": "^7.0.0",
+        "normalize-path": "^3.0.0",
+        "picomatch": "^2.3.1",
+        "readdirp": "^3.6.0",
+        "source-map-js": "^1.0.2",
+        "to-regex-range": "^5.0.1"
+    },
+    "scripts": {
+        "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+        "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Gislhaine/gislhaine.github.io.git"
+    },
+    "author": "Gislhaine GUEI",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Gislhaine/gislhaine.github.io.git/issues"
+    },
+    "homepage": "https://github.com/Gislhaine/gislhaine.github.io.git"
+}

@@ -1,0 +1,135 @@
+/*  MAIN ACCUEIL  */
+
+/*  MAIN ACCUEIL - section concept  */
+
+.concept {
+	padding-bottom: 20px;
+	background-color: rgb(245, 245, 245);
+	text-align: center;
+}
+
+.location {
+	background-color:rgb(240, 240, 240);
+}
+
+.location .icon {
+	padding: 15px 15px 15px 0;
+}
+
+.concept-title {
+	padding: 0 40px;
+}
+
+.concept-description {
+	padding: 0 30px;
+}
+
+.lighter {
+	font-weight: lighter;
+}
+
+/*  MAIN ACCUEIL - section process  */
+
+.process {
+	padding: 10px;
+	background-color: #fff;
+}
+
+.actions-list {
+	display: flex;
+	display: -webkit-box;
+  	display: -ms-flexbox;
+	flex-direction: column;
+	-webkit-box-orient: vertical;
+	list-style-type: none;
+	padding: 0;
+}
+
+.actions-list .item {
+	position: relative;
+	padding: 1em .7em;
+	padding: 20px 13px 0 13px;
+	margin: 20px 10px;
+	height: 50px;
+	text-align: left;
+	background-color: rgb(245, 245, 245);
+	border-radius: 15px;
+	box-shadow: 0px 5px 10px 0px gainsboro;
+	-webkit-box-shadow: 0px 5px 10px 0px gainsboro;
+}
+
+.actions-list .item:hover {
+	background-color: rgba(147, 86, 220, .1);
+	cursor: default;
+}
+
+.actions-list .item:hover .icon {
+	color: $color-primary;
+}
+
+.actions-list .icon {
+	margin: 0 25px;
+	font-size: 20px;
+	color: #646464;
+}
+
+.step {
+	position: absolute;
+	left: -10px;
+	padding-top: 2px;
+	width: 23px;
+	height: 20px;
+	border-radius: 50px;
+	text-align: center;
+	font-size: 0.9em;
+	color: #fff;
+	background-color: $color-primary;
+}
+
+/*  MAIN ACCUEIL - section restaurants  */
+
+.restaurants {
+	padding: 15px;
+	background-color: rgb(245, 245, 245)
+	}
+
+.photo {
+	width: 100%;
+	border-radius: 20px 20px 0 0;
+}
+
+.menu {
+	position: relative;
+	margin-bottom: 15px;
+	border-radius: 20px;
+	box-shadow: 0px 5px 10px 0px rgb(220, 220, 220);
+	background-color: #fff;
+}
+
+.menu a {
+	color: #000;
+	text-decoration: none;
+}
+
+.menu-titre {
+	display: flex;
+	flex-direction: column;
+	margin: 10px 15px 0;
+	padding-bottom: 20px;
+	background-color: #fff;
+	border-radius: 20px 20px 0 0;
+}
+
+/*  MAIN ACCUEIL - Promo  */
+
+.promo {
+	position: absolute;
+	top:20px;
+	right: 20px;
+	width: 100px;
+	padding: 15px;
+	color: #0c6b50;
+	background: $color-tertiary;
+	border-radius: 3px;
+	text-align: center;
+}

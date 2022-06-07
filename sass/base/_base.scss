@@ -1,0 +1,158 @@
+/* Gestion typo rem */
+:root {
+	font-size: 18px;
+}
+
+/* Implantation de border-bodx*/
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+/* Privilégier l'appel aux classes en HTML plutôt que d'ajouter l'attribut sur chaque élément */
+.flex {
+	display: flex;
+	&__centrage {
+		justify-content: center;
+		align-items: center;
+	}
+	&__centrage-horizontal {
+		justify-content: center;
+	}
+	&__centrage-vertical {
+		align-items: center;
+	}
+	&__colonne {
+		flex-direction: column;
+	}
+	&__row {
+		flex-direction: row;
+	}
+	&__space-between {
+		justify-content: space-between;
+	}
+	&__end {
+		justify-content: end;
+	}
+}
+
+/* Propriétés de mise en forme */
+.fond {
+	&__gris {
+		background-color: $couleur--gris-clair;
+	}
+}
+
+.padding {
+	padding: 20px;
+}
+
+.espacement {
+	&--50px {
+		margin: 50px 0;
+	}
+}
+
+.responsive {
+	&--row {
+		@include mediaqueries-min($tablet) {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+}
+
+/* Configuration globale d'une brique (commune aux plats et aux restaurants) */
+.brique {
+	position: relative;
+	flex-shrink: 0; /* Permet de contrôler width */
+	width: calc(100%); /* Transforme la valeur en px */
+	margin: 10px;
+	border-radius: $border-radius--brique;
+	@include ombre-brique;
+	/* Gère la configuration initiale du texte */
+	&__texte {
+		padding: 0 5%;
+		width: calc(90%); /* Width en calc pour avoir une valeur en pourcentage convertie en pixels */
+	}
+	i {
+		cursor: pointer; /* Rend tous les icones cliquables */
+	}
+}
+
+/* Rend div entièrement cliquable (attention à mettre un z-index supérieur en hover sur l'élément (icônes notamment) */
+.bloc-cliquable {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.cursor {
+	cursor: pointer;
+}
+
+/* Gestion SVG */
+.svg {
+	display: inline-block; /* Propriété nécessaire à la bonne gestion du SVG */
+	&__animation {
+		&:hover .svg__animation--fill {
+			animation: animation--fill 2s cubic-bezier(0.5, 0.5, 0, 1) infinite forwards;
+		}
+		&:active .svg__animation--fill {
+			animation: animation--fill 0s cubic-bezier(0.5, 0.5, 0, 1) forwards;
+		}
+		&:hover .svg__animation--pulse {
+			animation: animation--pulse 2s cubic-bezier(0.5, 0.5, 0, 1) infinite;
+		}
+		&--fill {
+			/*Possibilité de créer une variante par type d'animation */
+			@include animation--fill; /* Changement de la couleur avec variable. Violet par défaut */
+		}
+		&--pulse {
+			@include animation--pulse;
+		}
+	}
+}
+
+/* Animation loading spinner (à trigger avec du JS à terme) */
+.loader {
+	border: 10px solid transparent;
+	border-radius: 50%;
+	border-top: 10px solid $couleur--rose;
+	border-bottom: 10px solid $couleur--violet;
+	width: 80px;
+	height: 80px;
+	margin: auto;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	animation: loader 5s cubic-bezier(0.61, 1.05, 0.42, 1.26) forwards;
+	opacity: 1;
+	&__background {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $couleur--blanc;
+		z-index: 3;
+		animation: background 5s forwards;
+	}
+}
