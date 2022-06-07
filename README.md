@@ -1,5 +1,4 @@
-FORMATION DE DEVELOPPEUR WEB 
-PROJET 3 
+FORMATION DE DEVELOPPEUR WEB PROJET 3 
 https://openclassrooms.com/fr/paths/185/projects/637/courses
 
 Vous venez d’être recruté chez Ohmyfood!, en tant que développeur junior. 
